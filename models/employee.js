@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const employeeSchema = new mongoose.Schema({
     first_name: { type: String, required: true, maxlength: 100 },
@@ -10,4 +10,4 @@ const employeeSchema = new mongoose.Schema({
     department: { type: String, enum: ['Engineering', 'Product', 'Sales'], maxlength: 25 },
 });
 
-export default mongoose.model('Employee', employeeSchema);
+module.exports = mongoose.model("Employee", employeeSchema);
