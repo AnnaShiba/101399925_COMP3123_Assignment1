@@ -1,5 +1,6 @@
 import express from "express";
 const app = express();
+const Employee = require('../models/employee');
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
