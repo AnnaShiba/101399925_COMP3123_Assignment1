@@ -16,7 +16,7 @@ app.get('/api/v1/emp/employees', async (req, res) => {
         res.status(500).json({ status: false, message: err.message });
     }
 });
-mongoose.connect('mongodb://127.0.0.1:27117/comp3123_assignment1', {})
+mongoose.connect(process.env.MONGODB_URI, {})
     .then(_ => app.listen(3123, () => console.log("Server ready on port 3123 with MongoDB.")))
     .catch(error => console.log(error));
 
