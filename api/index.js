@@ -2,9 +2,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 const app = express();
-const router = express.Router();
 
+const userRoutes = require('./users');
 const Employee = require('../models/employee');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use('/api/v1/user', userRoutes);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
