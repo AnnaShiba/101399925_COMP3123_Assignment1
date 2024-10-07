@@ -1,14 +1,14 @@
 {
-  "name": "assign1",
+  "name": "101399925_COMP3123_Assignment1",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anna Shibanova",
   "license": "ISC",
-  "description": "",
+  "description": "101399925_COMP3123_Assignment1",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.21.0",

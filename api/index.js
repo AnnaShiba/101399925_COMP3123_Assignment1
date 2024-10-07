@@ -4,22 +4,16 @@ import mongoose from 'mongoose';
 const app = express();
 
 const userRoutes = require('./users');
-const Employee = require('../models/employee');
+const employeeRoutes = require('./employee');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/emp', employeeRoutes);
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.send("COMP 3123 Assignment 1 by Anna"));
 
-app.get('/api/v1/emp/employees', async (req, res) => {
-    try {
-        const employees = await Employee.find();
-        res.status(200).json(employees);
-    } catch (err) {
-        res.status(500).json({ status: false, message: err.message });
-    }
-});
 mongoose.connect(process.env.MONGODB_URI, {})
     .then(_ => app.listen(3123, () => console.log("Server ready on port 3123 with MongoDB.")))
     .catch(error => console.log(error));
